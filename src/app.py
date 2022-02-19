@@ -63,6 +63,13 @@ def index():
     # return render_template('index.html', username=current_user.id)
 
 
+@app.route('/donor/')
+# @login_required
+# @allowed_perms(['donor'])
+def donor():
+    return render_template('donor.html')
+
+
 @app.route('/login/', methods=['POST', 'GET'])
 def login():
     if request.method == 'GET':
