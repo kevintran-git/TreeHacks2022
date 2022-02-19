@@ -80,22 +80,22 @@ def login():
         flash('Please check your login details and try again.')
         return redirect(url_for('login'))
 
-    username = form.get('username')
+    login = form.get('login')
     password = form.get('password')
     remember = form.get('remember', False)
 
-    db_user = loop.run_until_complete(get_login_user(pool=app.pool, username=username))
+    db_user = loop.run_until_complete(get_login_user(pool=app.pool, username=login))
 
     if not db_user or not check_password_hash(db_user['password'], password):
         flash('Please check your login details and try again.')
         return redirect(url_for('login'))  # if the user doesn't exist or password is wrong, reload the page
 
     user = User()
-    user.id = username
+    user.id = login
     user.type = db_user['type']
     login_user(user=user, remember=remember)
 
-    users[username] = user
+    users[login] = user
 
     return redirect(url_for('index'))
 
