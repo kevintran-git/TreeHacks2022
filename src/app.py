@@ -63,11 +63,11 @@ def index():
     # return render_template('index.html', username=current_user.id)
 
 
-@app.route('/donor/')
+@app.route('/event/')
 @login_required
-# @allowed_perms(['donor'])
-def donor():
-    return render_template('donor.html')
+# @allowed_perms(['event'])
+def eventhost():
+    return render_template('eventhost.html')
 
 
 @app.route('/distributor/')

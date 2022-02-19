@@ -14,20 +14,9 @@
 </head>
 
 <body style="background: var(--bs-white);">
-    <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background: var(--bs-red);">
-        <div class="container"><a class="navbar-brand" href="/" style="color: var(--bs-white);font-size: 28px;font-family: Montserrat, sans-serif;">&nbsp; &nbsp;FoodSource.</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><span style="color: var(--bs-white);font-family: Montserrat, sans-serif;">No one should go hungry.</span>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: var(--bs-white);font-family: Montserrat, sans-serif;">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: var(--bs-white);font-family: Montserrat, sans-serif;">Contact Us</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: var(--bs-white);font-family: Montserrat, sans-serif;">Home</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- INCLUDE NAVBAR -->
+    {% include 'components/navbar.html' %}
+    <!-- END INCLUDE NAVBAR -->
     <h3 class="text-center align-bottom" style="background: var(--bs-white);height: 105.0938px;padding: 59px;color: var(--bs-red);font-family: Montserrat, sans-serif;font-size: 30px;">who are you?</h3>
     <div class="row text-center" style="text-align: center;">
         <div class="col position-relative" style="height: 250px;padding: 25px;"><img style="width: 200px;height: 200px;">
@@ -37,42 +26,12 @@
             <h1 style="font-size: 25px;font-family: Montserrat, sans-serif;color: var(--bs-red);">distributor</h1><a class="stretched-link" href="/distributor/"></a>
         </div>
         <div class="col position-relative" style="height: 250px;padding: 25px;"><img style="width: 200px;height: 200px;">
-            <h1 style="font-size: 25px;font-family: Montserrat, sans-serif;color: var(--bs-red);">food donor</h1><a class="stretched-link" href="/donor/"></a>
+            <h1 style="font-size: 25px;font-family: Montserrat, sans-serif;color: var(--bs-red);">event</h1><a class="stretched-link" href="/event/"></a>
         </div>
     </div>
-    <footer class="footer-clean" style="padding: 221px 0px;height: 434.385px;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-4 col-md-3 item" style="font-family: Montserrat, sans-serif;color: var(--bs-red);">
-                    <h3 style="font-family: Montserrat, sans-serif;">Home</h3>
-                    <ul>
-                        <li><a href="#">consumer</a></li>
-                        <li><a href="#">distributor</a></li>
-                        <li><a href="#">food donor</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 item" style="color: var(--bs-red);">
-                    <h3 style="font-family: Montserrat, sans-serif;">About</h3>
-                    <ul>
-                        <li><a href="#" style="font-family: Montserrat, sans-serif;">what we do</a></li>
-                        <li style="font-family: Montserrat, sans-serif;"><a href="#">who we are</a></li>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 item" style="color: var(--bs-red);font-family: Montserrat, sans-serif;">
-                    <h3 style="font-family: Montserrat, sans-serif;">Contact Us</h3>
-                    <ul>
-                        <li><a href="#">email us</a></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 item social"><a href="#" style="color: var(--bs-red);"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter" style="color: var(--bs-red);"></i></a><a href="#" style="color: var(--bs-red);"><i class="icon ion-social-snapchat"></i></a><a href="#" style="color: var(--bs-red);"><i class="icon ion-social-instagram"></i></a>
-                    <p class="copyright" style="font-family: Montserrat, sans-serif;color: var(--bs-red);">FoodSource © 2022</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- INCLUDE FOOTER -->
+    {% include 'components/footer.html' %}
+    <!-- END INCLUDE FOOTER -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
