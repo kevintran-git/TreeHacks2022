@@ -74,6 +74,9 @@ def eventhost():
 @login_required
 # @allowed_perms(['distributor'])
 def distributor():
+    print(current_user.id)
+
+
     return render_template('distributor.html')
 
 
