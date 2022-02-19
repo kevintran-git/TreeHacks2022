@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Footer-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Login-Form-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Navigation-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
 
 <body style="background: var(--bs-white);">
@@ -31,10 +31,17 @@
     </nav>
     <h3 class="text-center align-bottom" style="background: var(--bs-white);height: 105.0938px;padding: 59px;color: var(--bs-red);font-family: Montserrat, sans-serif;font-size: 30px;">login</h3>
     <section class="login-clean" style="background: rgb(255,255,255);">
-        <form method="post">
+        <form method="post" action="/login/">
             <h2 class="visually-hidden">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <div class="mb-3"><input class="form-control" type="text" name="login" placeholder="Email"></div>
             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
             <div class="mb-3 visually-hidden"><input class="form-control" type="password" name="password" placeholder="Confirm Password"></div>
             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></div><a class="forgot" href="#">Don't have an account? Register</a>
