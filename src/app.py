@@ -9,6 +9,8 @@ from flask import Flask, render_template, request, flash, redirect, url_for, abo
 from src.db import get_login_user, get_posts
 
 # INIT FLASK
+from src.forms import EventPostForm
+
 app = Flask(__name__)
 
 # INIT DATABASE AND ASYNC
@@ -68,6 +70,18 @@ def index():
 # @allowed_perms(['event'])
 def eventhost():
     return render_template('eventhost.html')
+
+
+@app.route('/event_post/', methods=['GET', 'POST'])
+@login_required
+# @allowed_perms(['event'])
+def event_post():
+    post = EventPostForm(request.form)
+
+    if request.method == 'GET' or not post.validate():
+        return redirect(url_for('event'))
+
+    loop.run_until_complete(add_post(pool=app.pool, post=post))
 
 
 @app.route('/distributor/')
