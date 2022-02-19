@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>distributorpage2</title>
+    <title>Distributorpage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Navigation-Clean.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background: var(--bs-red);">
-        <div class="container"><a class="navbar-brand" href="#" style="color: var(--bs-white);font-size: 28px;font-family: Montserrat, sans-serif;">&nbsp; &nbsp;FoodSource.</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><span style="color: var(--bs-white);font-family: Montserrat, sans-serif;">No one should go hungry.</span>
+        <div class="container"><a class="navbar-brand" href="/" style="color: var(--bs-white);font-size: 28px;font-family: Montserrat, sans-serif;">&nbsp; &nbsp;FoodSource.</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><span style="color: var(--bs-white);font-family: Montserrat, sans-serif;">No one should go hungry.</span>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"></li>
@@ -26,12 +27,12 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-xl-2" style="padding-top: 13px;">
-                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-red);">your upcoming events</button></div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-6 col-xl-3" style="padding-top: 13px;">
+                <div class="btn-group" role="group"><button class="btn btn-primary" type="button" style="background: var(--bs-red);">make a new post</button><button class="btn btn-primary" type="button" style="background: var(--bs-red);" onclick="location.href = '/distributor/find/';">find a food donor</button></div>
             </div>
             <div class="col-md-6">
-                <h1 style="color: var(--bs-red);font-family: Montserrat, sans-serif;font-size: 30px;padding: 25px;text-align: left;">available events</h1>
+                <h1 style="color: var(--bs-red);font-family: Montserrat, sans-serif;font-size: 30px;padding: 25px;text-align: left;">your upcoming events</h1>
             </div>
         </div>
     </div>
@@ -41,24 +42,35 @@
                 <div class="card-group">
                     <div class="card"><img class="card-img-top w-100 d-block">
                         <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;"><strong>event title</strong></h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">event name, what food, address, date and time to pick up, common allergens (if any), estimation of quantity of food, contact info (phone number)</p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">accept event</button>
+                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">user input title</h4>
+                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)</p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">edit</button>
                         </div>
                     </div>
                     <div class="card"><img class="card-img-top w-100 d-block">
                         <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">event title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">event name, what food, address, date and time to pick up, common allergens (if any), estimation of quantity of food, contact info (phone number)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">accept event</button>
+                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">user input title</h4>
+                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">edit</button>
                         </div>
                     </div>
                     <div class="card"><img class="card-img-top w-100 d-block">
                         <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">event title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">event name, what food, address, date and time to pick up, common allergens (if any), estimation of quantity of food, contact info (phone number)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">accept event</button>
+                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">user input title</h4>
+                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">edit</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="color: var(--bs-red);font-family: Montserrat, sans-serif;font-size: 30px;padding-top: 20px;padding-bottom: 12px;">your accepted events</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col-md-12" style="padding-top: 10px;">
                 <div class="card-group">
                     <div class="card"><img class="card-img-top w-100 d-block">
@@ -84,6 +96,9 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
 </body>
 
 </html>

@@ -64,10 +64,31 @@ def index():
 
 
 @app.route('/donor/')
-# @login_required
+@login_required
 # @allowed_perms(['donor'])
 def donor():
     return render_template('donor.html')
+
+
+@app.route('/distributor/')
+@login_required
+# @allowed_perms(['distributor'])
+def distributor():
+    return render_template('distributor.html')
+
+
+@app.route('/distributor/find/')
+@login_required
+# @allowed_perms(['distributor'])
+def distributor_find():
+    return render_template('distributor_find.html')
+
+
+@app.route('/consumer/')
+# @login_required
+# @allowed_perms(['consumer'])
+def consumer():
+    return render_template('consumer.html')
 
 
 @app.route('/login/', methods=['POST', 'GET'])
