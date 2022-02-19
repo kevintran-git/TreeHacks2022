@@ -28,47 +28,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" style="padding-top: 10px;">
-                <div class="card-group">
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;"><strong>distributor made title</strong></h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">distributor made title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">distributor made title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12" style="padding-top: 10px;">
-                <div class="card-group">
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;"><strong>distributor made title</strong></h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">distributor made title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
-                    <div class="card"><img class="card-img-top w-100 d-block">
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: Montserrat, sans-serif;font-weight: bold;">distributor made title</h4>
-                            <p class="card-text" style="font-family: Montserrat, sans-serif;">organization name, what food, address, date and time, common allergens (if any)<br></p><button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">more details</button>
-                        </div>
-                    </div>
+                <div class="card-group" id="card-group">
                 </div>
             </div>
         </div>
@@ -81,6 +41,10 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        var posts = {{ posts|tojson }};
+    </script>
+    <script src="{{url_for('static', filename='js/distributor.js')}}"></script>
 </body>
 
 </html>

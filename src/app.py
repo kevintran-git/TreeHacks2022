@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, login_user, login_required, UserMixin, logout_user, current_user
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 
-from src.db import get_login_user
+from src.db import get_login_user, get_posts
 
 # INIT FLASK
 app = Flask(__name__)
@@ -74,10 +74,9 @@ def eventhost():
 @login_required
 # @allowed_perms(['distributor'])
 def distributor():
-    print(current_user.id)
+    posts = loop.run_until_complete(get_posts(pool=app.pool, login=current_user.id))
 
-
-    return render_template('distributor.html')
+    return render_template('distributor.html', posts=posts)
 
 
 @app.route('/distributor/find/')
@@ -91,7 +90,9 @@ def distributor_find():
 # @login_required
 # @allowed_perms(['consumer'])
 def consumer():
-    return render_template('consumer.html')
+    posts = loop.run_until_complete(get_posts(pool=app.pool, login=None))
+
+    return render_template('consumer.html', posts=posts)
 
 
 @app.route('/login/', methods=['POST', 'GET'])

@@ -20,36 +20,38 @@
     <main class="page landing-page">
         <h1 style="color: var(--bs-red);text-align: center;font-weight: bold;padding: 8px;">Welcome</h1>
         <div class="row">
-            <div class="col text-center">
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;">*Name:</h4><input type="text" name="name" placeholder="your name" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;margin: 0px;padding: 0px;">
+            <form method="post" action="event_post">
+                <div class="col text-center">
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;">*Name:</h4><input type="text" name="name" placeholder="your name" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;margin: 0px;padding: 0px;">
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;">*Amount of food:</h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">please estimate how many people can be served</h4><input type="text" name="name" placeholder="enter a number range" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;">*Phone number:</h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">this will be shared with the distributor for contact purposes</h4><input type="text" name="name" placeholder="123-456-7899" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
+                    </div>
                 </div>
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;">*Amount of food:</h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">please estimate how many people can be served</h4><input type="text" name="name" placeholder="enter a number range" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
+                <div class="col text-center">
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;">Source:</h4><input type="text" name="name" placeholder="e.g. football game, stanford, restaurant" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;">*Location:</h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">please enter your full address</h4><input type="text" name="name" placeholder="e.g. 450 Serra Mall, Stanford, CA 94305" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;margin: 0px;">
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;">Additional Notes:</h4>
+                        <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">this will be shared with potential distributors</h4><input type="text" placeholder="" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-700);height: 40px;border-right-color: var(--bs-gray-700);border-left-color: var(--bs-gray-600);">
+                    </div>
                 </div>
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;">*Phone number:</h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">this will be shared with the distributor for contact purposes</h4><input type="text" name="name" placeholder="123-456-7899" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
-                </div>
-            </div>
-            <div class="col text-center">
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;">Source:</h4><input type="text" name="name" placeholder="e.g. football game, stanford, restaurant" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;">
-                </div>
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;">*Location:</h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">please enter your full address</h4><input type="text" name="name" placeholder="e.g. 450 Serra Mall, Stanford, CA 94305" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-600);height: 40px;margin: 0px;">
-                </div>
-                <div>
-                    <h4 style="color: var(--bs-gray-700);height: 40px;"></h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;">Additional Notes:</h4>
-                    <h4 style="color: var(--bs-gray-700);height: 25px;font-size: 11pt;font-style: italic;">this will be shared with potential distributors</h4><input type="text" placeholder="" style="width: 446px;background: rgba(255,255,255,0);color: var(--bs-gray-700);height: 40px;border-right-color: var(--bs-gray-700);border-left-color: var(--bs-gray-600);">
-                </div>
-            </div>
+            </form>
         </div>
         <div class="row" style="margin: 36px;padding: 0px;">
             <div class="col-md-12 offset-0 offset-sm-0 offset-md-0 offset-lg-0 d-flex justify-content-center" style="padding: 0px;margin: 0px;"><button class="btn btn-primary" data-bss-hover-animate="pulse" type="button" style="background: var(--bs-red);width: 160px;height: 50px;font-size: 18pt;">Submit</button></div>
