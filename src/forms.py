@@ -11,3 +11,6 @@ class EventPostForm(Form):
     source = StringField('')
     location = StringField('')
     notes = StringField('')
+
+class DistributorPostForm(Form):
+    pass
