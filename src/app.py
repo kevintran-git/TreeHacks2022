@@ -6,9 +6,9 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, login_user, login_required, UserMixin, logout_user, current_user
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 
-from src.db import get_login_user, get_distributor_posts, add_post, get_event_posts
+from src.db import get_login_user, get_distributor_posts, add_post, get_event_posts, acceptEvent
 
-from src.forms import PostForm
+from src.forms import PostForm, AcceptForm
 
 # INIT FLASK
 app = Flask(__name__)
@@ -110,7 +110,7 @@ def distributor_post():
     return render_template('distributor_post.html')
 
 
-@app.route('/distributor_post/')
+@app.route('/distributor_post/', methods=['GET', 'POST'])
 @login_required
 # @allowed_perms(['distributor'])
 def distributorPost():
@@ -122,6 +122,22 @@ def distributorPost():
     loop.run_until_complete(add_post(pool=app.pool, post=post, type='distributor', login=current_user.id))
 
     return redirect(url_for('distributor'))
+
+
+@app.route('/accept_event/', methods=['GET', 'POST'])
+@login_required
+# @allowed_perms(['event'])
+def accept_event():
+    data = AcceptForm(request.form)
+
+    if request.method == 'GET' or not data.validate():
+        return redirect(url_for('distributor_find'))
+
+    id = data.id.data
+
+    loop.run_until_complete(acceptEvent(pool=app.pool, id=id, login=current_user.id))
+
+    return redirect(url_for('distributor_find'))
 
 
 @app.route('/consumer/')

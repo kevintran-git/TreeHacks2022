@@ -20,6 +20,7 @@ for (var i=0; i < posts.length; i++) {
                 <p class="card-text" style="font-family: Montserrat, sans-serif;">Location: ${posts[i].address}<br></p>
                 <p class="card-text" style="font-family: Montserrat, sans-serif;">Date: ${posts[i].date}<br></p>
                 <p class="card-text" style="font-family: Montserrat, sans-serif;">Allergens: ${posts[i].allergens}<br></p>
+                <button class="btn btn-primary" type="button" style="font-family: Montserrat, sans-serif;">accept event</button>
             </div>
         </div>
     `;
