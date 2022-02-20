@@ -30,3 +30,9 @@ async def add_post(pool, post, type, login):
                            ' VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)', post.title.data, post.org_name.data,
                            post.food_name.data, post.address.data, post.date.data, post.allergens.data, post.image.data,
                            user_id, type)
+
+async def acceptEvent(pool, id, login):
+    async with pool.acquire(timeout=10) as conn:
+        user = await conn.fetchrow('SELECT * FROM users WHERE username = $1', login)
+        display_name = user['display_name']
+        await conn.execute('UPDATE posts SET org_name = $1, type = $2 WHERE id = $3', display_name, 'distributor', id)

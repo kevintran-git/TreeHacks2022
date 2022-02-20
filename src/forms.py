@@ -12,3 +12,6 @@ class PostForm(Form):
     date = StringField('')
     allergens = StringField('')
     image = FileField()
+
+class AcceptForm(Form):
+    id = IntegerField('')
