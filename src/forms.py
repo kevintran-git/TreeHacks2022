@@ -14,3 +14,6 @@ class PostForm(Form):
 
 class AcceptForm(Form):
     id = IntegerField('')
+
+class PublishForm(Form):
+    id = IntegerField('')
