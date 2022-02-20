@@ -148,9 +148,14 @@ def consumer():
     return render_template('consumer.html', posts=posts)
 
 
-@app.route('/about_us/')
-def about_us():
-    return render_template('about_us.html')
+@app.route('/who_we_are/')
+def who_we_are():
+    return render_template('who_we_are.html')
+
+
+@app.route('/our_mission/')
+def our_mission():
+    return render_template('our_mission.html')
 
 
 @app.route('/contact_us/')
