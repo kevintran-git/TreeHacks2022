@@ -4,13 +4,11 @@ from wtforms import Form, StringField, IntegerField, BooleanField, FileField
 from wtforms.validators import InputRequired
 
 
-class EventPostForm(Form):
-    name = StringField('')
-    amount = StringField('')
-    phone = StringField('')
-    source = StringField('')
-    location = StringField('')
-    notes = StringField('')
-
-class DistributorPostForm(Form):
-    pass
+class PostForm(Form):
+    title = StringField('')
+    org_name = StringField('')
+    food_name = StringField('')
+    address = StringField('')
+    date = StringField('')
+    allergens = StringField('')
+    image = FileField()

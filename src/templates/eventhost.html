@@ -24,27 +24,26 @@
             </div>
         </div>
     </div>
-    <form method="post" action="/distributor_post/">
+    <form method="post" action="/event_post/">
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Post title:</span><input class="form-control" type="text"></div>
+                    <div class="input-group"><span class="input-group-text">Post title:</span><input class="form-control" type="text" name="title"></div>
                 </div>
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Organization Name:</span><input class="form-control" type="text"></div>
+                    <div class="input-group"><span class="input-group-text">Organization Name:</span><input class="form-control" type="text" name="org_name"></div>
                 </div>
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Name of Food(s):</span><input class="form-control" type="text"></div>
+                    <div class="input-group"><span class="input-group-text">Name of Food(s):</span><input class="form-control" type="text" name="food_name"></div>
                 </div>
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Address for Pickup:</span><input class="form-control" type="text"></div>
+                    <div class="input-group"><span class="input-group-text">Address for Pickup:</span><input class="form-control" type="text" name="address"></div>
                 </div>
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Date and Time:</span><input class="form-control" type="text"></div>
+                    <div class="input-group"><span class="input-group-text">Date and Time:</span><input class="form-control" type="text" name="date"></div>
                 </div>
                 <div class="col-md-12" style="padding: 10px;">
-                    <div class="input-group"><span class="input-group-text">Common Allergens (if any):</span><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Peanuts</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Tree nuts</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Dairy</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Eggs</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Gluten</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Soy</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Fish</button><button class="btn btn-primary" type="button" style="margin: 5px;background: rgb(135,191,255);border-color: rgb(135,191,255);">Shellfish</button>
-                        <div class="btn-toolbar input-group-text"></div>
+                    <div class="input-group"><span class="input-group-text">Common Allergens (if any):</span><input class="form-control" type="text" name="allergens"></div>
                     </div>
                 </div>
             </div>
@@ -54,12 +53,12 @@
                 <div class="col-md-6 col-lg-4" style="text-align: center;">
                     <div class="input-group" style="padding-top: 6px;padding-bottom: 6px;"><span class="input-group-text" style="text-align: center;">Upload Picture of Food (optional):</span></div>
                 </div>
-                <div class="col-md-6 col-lg-8"><input type="file" style="padding-top: 7px;"></div>
+                <div class="col-md-6 col-lg-8"><input type="file" style="padding-top: 7px;" name="image"></div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6" style="padding: 10px;"><button class="btn btn-primary" type="button" style="background: var(--bs-red);" onclick="location.href = '/distributor/'">Back</button></div>
+                <div class="col-md-6" style="padding: 10px;"><button class="btn btn-primary" type="button" style="background: var(--bs-red);" onclick="location.href = '/'">Back</button></div>
                 <div class="col-md-6" style="padding: 10px;text-align: right;"><button class="btn btn-primary" type="submit" style="text-align: right;background: var(--bs-red);">Submit</button></div>
             </div>
         </div>

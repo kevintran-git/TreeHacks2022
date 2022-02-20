@@ -22,3 +22,11 @@ async def get_event_posts(pool):
         posts = await conn.fetch('SELECT * FROM posts WHERE posts.type = $1', 'event')
     posts = [dict(post) for post in posts]
     return posts
+
+async def add_post(pool, post, type, login):
+    async with pool.acquire(timeout=10) as conn:
+        user_id = await conn.fetchval('SELECT id FROM users WHERE username = $1', login)
+        await conn.execute('INSERT INTO posts(title, org_name, food_name, address, date, allergens, image, user_id, type)'
+                           ' VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)', post.title.data, post.org_name.data,
+                           post.food_name.data, post.address.data, post.date.data, post.allergens.data, post.image.data,
+                           user_id, type)

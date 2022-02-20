@@ -6,11 +6,11 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import LoginManager, login_user, login_required, UserMixin, logout_user, current_user
 from flask import Flask, render_template, request, flash, redirect, url_for, abort
 
-from src.db import get_login_user, get_distributor_posts
+from src.db import get_login_user, get_distributor_posts, add_post, get_event_posts
+
+from src.forms import PostForm
 
 # INIT FLASK
-from src.forms import EventPostForm, DistributorPostForm
-
 app = Flask(__name__)
 
 # INIT DATABASE AND ASYNC
@@ -59,7 +59,6 @@ def shutdown():
 
 
 @app.route('/')
-# @login_required
 def index():
     return render_template('index.html')
     # return render_template('index.html', username=current_user.id)
@@ -76,12 +75,14 @@ def eventhost():
 @login_required
 # @allowed_perms(['event'])
 def event_post():
-    post = EventPostForm(request.form)
+    post = PostForm(request.form)
 
     if request.method == 'GET' or not post.validate():
         return redirect(url_for('event'))
 
-    loop.run_until_complete(add_post(pool=app.pool, post=post))
+    loop.run_until_complete(add_post(pool=app.pool, post=post, type='event', login=current_user.id))
+
+    return redirect(url_for('eventhost'))
 
 
 @app.route('/distributor/')
@@ -97,7 +98,9 @@ def distributor():
 @login_required
 # @allowed_perms(['distributor'])
 def distributor_find():
-    return render_template('distributor_find.html')
+    posts = loop.run_until_complete(get_event_posts(pool=app.pool))
+
+    return render_template('distributor_find.html', posts=posts)
 
 
 @app.route('/distributor/post/')
@@ -111,14 +114,17 @@ def distributor_post():
 @login_required
 # @allowed_perms(['distributor'])
 def distributorPost():
-    post = DistributorPostForm(request.form)
+    post = PostForm(request.form)
 
     if request.method == 'GET' or not post.validate():
-        return redirect(url_for('event'))
+        return redirect(url_for('distributor'))
+
+    loop.run_until_complete(add_post(pool=app.pool, post=post, type='distributor', login=current_user.id))
+
+    return redirect(url_for('distributor'))
 
 
 @app.route('/consumer/')
-# @login_required
 # @allowed_perms(['consumer'])
 def consumer():
     posts = loop.run_until_complete(get_distributor_posts(pool=app.pool, login=None))
